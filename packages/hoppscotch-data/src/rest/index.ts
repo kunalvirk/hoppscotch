@@ -235,6 +235,7 @@ export function parseOldAuth(x: any): HoppRESTAuth {
       authType: "bearer",
       authActive: true,
       token: x.bearerToken,
+      tokenPrefix: ""
     }
 
   return { authType: "none", authActive: true }

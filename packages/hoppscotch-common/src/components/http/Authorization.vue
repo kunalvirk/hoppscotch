@@ -55,6 +55,7 @@
                 @click="
                   () => {
                     auth.authType = 'bearer'
+                    auth.tokenPrefix = 'Bearer'
                     hide()
                   }
                 "
@@ -134,6 +135,12 @@
           <HttpAuthorizationBasic v-model="auth" />
         </div>
         <div v-if="auth.authType === 'bearer'">
+          <div class="flex flex-1 border-b border-dividerLight">
+            <span class="flex items-center pl-4">
+              <label class="text-secondaryLight"> Token Prefix </label>
+            </span>
+            <SmartEnvInput v-model="auth.tokenPrefix" placeholder="Bearer" />
+          </div>
           <div class="flex flex-1 border-b border-dividerLight">
             <SmartEnvInput v-model="auth.token" placeholder="Token" />
           </div>

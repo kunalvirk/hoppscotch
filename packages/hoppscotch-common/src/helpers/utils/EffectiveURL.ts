@@ -71,7 +71,9 @@ const getComputedAuthHeaders = (
     headers.push({
       active: true,
       key: "Authorization",
-      value: `Bearer ${parseTemplateString(req.auth.token, envVars)}`,
+      value: `${
+        req.auth.tokenPrefix + parseTemplateString(req.auth.token, envVars)
+      }`,
     })
   } else if (req.auth.authType === "api-key") {
     const { key, value, addTo } = req.auth

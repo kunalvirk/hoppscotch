@@ -11,8 +11,8 @@ export type HoppRESTAuthBasic = {
 
 export type HoppRESTAuthBearer = {
   authType: "bearer"
-
   token: string
+  tokenPrefix: string;
 }
 
 export type HoppRESTAuthOAuth2 = {
